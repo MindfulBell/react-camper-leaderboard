@@ -82,7 +82,7 @@
 	      return _react2.default.createElement(
 	        'p',
 	        null,
-	        ' Hello!'
+	        ' Hello! '
 	      );
 	    }
 	  }]);
@@ -20208,7 +20208,7 @@
 	
 	
 	// module
-	exports.push([module.id, "p {\n  color: blue; }\n", ""]);
+	exports.push([module.id, "", ""]);
 	
 	// exports
 
