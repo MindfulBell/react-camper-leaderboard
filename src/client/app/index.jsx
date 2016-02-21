@@ -1,11 +1,18 @@
 import React from 'react';
 import {render} from 'react-dom';
 require("!style!css!sass!../public/css/style.scss");
-require('boostrap-loader');
+import Table from './table.jsx';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    this.state= {
+      
+    }
+  }
   render () {
-    return <p> Hello! </p>;
+    return <Table />;
   }
 }
 

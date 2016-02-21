@@ -57,6 +57,10 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 158);
 	
+	var _table = __webpack_require__(/*! ./table.jsx */ 159);
+	
+	var _table2 = _interopRequireDefault(_table);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65,25 +69,24 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	__webpack_require__(/*! style!css!sass!../public/css/style.scss */ 159);
+	__webpack_require__(/*! style!css!sass!../public/css/style.scss */ 160);
 	
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 	
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
+	
+	    _this.state = {};
+	    return _this;
 	  }
 	
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'p',
-	        null,
-	        ' Hello! '
-	      );
+	      return _react2.default.createElement(_table2.default, null);
 	    }
 	  }]);
 	
@@ -20169,6 +20172,83 @@
 
 /***/ },
 /* 159 */
+/*!**********************************!*\
+  !*** ./src/client/app/table.jsx ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _camper = __webpack_require__(/*! ./camper.jsx */ 164);
+	
+	var _camper2 = _interopRequireDefault(_camper);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Table = function Table(props) {
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	            'table',
+	            { className: 'table-striped' },
+	            _react2.default.createElement(
+	                'thead',
+	                null,
+	                _react2.default.createElement(
+	                    'tr',
+	                    null,
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        '#'
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        'Camper Name'
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: '#' },
+	                            'Points in past 30 days'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'th',
+	                        null,
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: '#' },
+	                            'Points all time'
+	                        )
+	                    )
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'tbody',
+	                null,
+	                _react2.default.createElement(_camper2.default, null)
+	            )
+	        )
+	    );
+	};
+	
+	exports.default = Table;
+
+/***/ },
+/* 160 */
 /*!******************************************************************************************!*\
   !*** ./~/style-loader!./~/css-loader!./~/sass-loader!./src/client/public/css/style.scss ***!
   \******************************************************************************************/
@@ -20177,10 +20257,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../../~/css-loader!./../../../../~/sass-loader!./style.scss */ 160);
+	var content = __webpack_require__(/*! !./../../../../~/css-loader!./../../../../~/sass-loader!./style.scss */ 161);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 162)(content, {});
+	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 163)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -20197,13 +20277,13 @@
 	}
 
 /***/ },
-/* 160 */
+/* 161 */
 /*!*************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/client/public/css/style.scss ***!
   \*************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 161)();
+	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 162)();
 	// imports
 	
 	
@@ -20214,7 +20294,7 @@
 
 
 /***/ },
-/* 161 */
+/* 162 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -20273,7 +20353,7 @@
 
 
 /***/ },
-/* 162 */
+/* 163 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -20528,6 +20608,55 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 164 */
+/*!***********************************!*\
+  !*** ./src/client/app/camper.jsx ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Camper = function Camper(props) {
+	    var userArr = []; //array of the users to place into the table itself
+	    return _react2.default.createElement(
+	        'tr',
+	        null,
+	        _react2.default.createElement(
+	            'td',
+	            null,
+	            'John'
+	        ),
+	        _react2.default.createElement(
+	            'td',
+	            null,
+	            'Doe'
+	        ),
+	        _react2.default.createElement(
+	            'td',
+	            null,
+	            'john@example.com'
+	        ),
+	        _react2.default.createElement(
+	            'td',
+	            null,
+	            ' null '
+	        )
+	    );
+	};
+	
+	exports.default = Camper;
 
 /***/ }
 /******/ ]);
