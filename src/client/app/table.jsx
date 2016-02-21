@@ -3,8 +3,8 @@ import Camper from './camper.jsx';
 
 const Table = (props) => {
     return (
-        <div className='container'>
-            <table className='table-striped'>
+        <div className='table-responsive'>
+            <table className='table table-striped'>
                     <thead>
                         <tr>
                             <th>#</th>
