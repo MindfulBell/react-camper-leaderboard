@@ -1,22 +1,13 @@
 import React from 'react';
 import $ from 'jquery';
 
-const Camper = (props) => {
-    //top past 30 days
-    var userArr30 = [];
-    $.getJSON('https://fcctop100.herokuapp.com/api/fccusers/top/recent', (data) => {
-        userArr30 = data.map(function(user, ind){
-            return {rank: ind+1, username: user.username, imgurl: user.img, last30: user.recent, alltime: user.alltime};
-        });
-        console.log(userArr30);
-    });
-    
+const Camper = (props) => {   
     return (
         <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-            <td> null </td>
+            <td>{props.rank}</td>
+            <td><img className='img-thumbnail img-responsive' src={props.img} width='50' height='50'/> {props.username}</td>
+            <td>{props.recentPoints}</td>
+            <td>{props.alltimePoints}</td>
         </tr>   
     )
 }
