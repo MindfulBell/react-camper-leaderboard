@@ -1,0 +1,76 @@
+$light: #A4E0B3;
+$dark: #207D38;
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	background-image: url('https://static.pexels.com/photos/20974/pexels-photo.jpg'); //not my photo
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+h1 {
+	font-size: 4em;
+	font-weight: bolder;
+	margin-top: 50px;
+	text-align: center;
+	background: -webkit-linear-gradient(#F2B407, #8A310E);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+h3 {
+	text-align: center;
+}
+
+#wrapper {
+	width: 80%;
+	margin: 100px auto 0px auto;
+	box-shadow: 0px 0px 20px 2px black;
+}
+
+.table-striped {
+	font-size: 1.5em;
+	font-weight: bold;
+
+	thead {
+		background-color: $dark;
+		color: white;
+	}
+	tbody {
+		tr:nth-of-type(odd) {
+ 			background-color: $light;
+ 		}
+ 		tr:nth-of-type(even) {
+ 			background-color: $dark;
+ 			color: white;
+ 		}
+ 	}
+ }
+
+.sorter {
+	cursor: pointer;
+	transition: all .3s;
+	-webkit-animation-delay: 3s;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 2;
+}
+
+.sorter:hover {
+	color: black;
+}
+
+#recent:active {
+	color: red;
+}
+
+p {
+	display: inline-block;
+	margin-bottom: 0px;
+}
+
+.seen {
+	display: inline;
+}
+
+.unseen {
+	display: none;
+}
