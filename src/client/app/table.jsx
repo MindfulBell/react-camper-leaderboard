@@ -4,6 +4,7 @@ import Camper from './camper.jsx';
 
 
 const Table = (props) => {
+    //mapping all the users into an array
     const camperList = props.usersToRender.map((users)=>{
         return (
             <Camper key={users.rank} rank={users.rank} username={users.username}
@@ -11,6 +12,7 @@ const Table = (props) => {
             )
     })
 
+    //click handler for when they click the sorter below
     return (
         <div className='animated fadeIn table-responsive'>
             <table className='table table-striped'>

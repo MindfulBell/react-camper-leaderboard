@@ -82,6 +82,11 @@
 	var App = function (_React$Component) {
 		_inherits(App, _React$Component);
 	
+		//init state holding the top campers over 30 days in recent Arr
+		//holding top campers all time in alltimeArr
+		//arrToUse used to control users clicking the columns to sort properly
+		//seen/unseen to show/hide the sort arrow
+	
 		function App(props) {
 			_classCallCheck(this, App);
 	
@@ -98,9 +103,12 @@
 			return _this;
 		}
 	
+		//ajax request for the leaders
+	
+	
 		_createClass(App, [{
-			key: 'componentWillMount',
-			value: function componentWillMount() {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
 				var _this2 = this;
 	
 				_axios2.default.all([_axios2.default.get('http://fcctop100.herokuapp.com/api/fccusers/top/recent'), _axios2.default.get('http://fcctop100.herokuapp.com/api/fccusers/top/alltime')]).then(_axios2.default.spread(function (recentResponse, alltimeResponse) {
@@ -119,6 +127,9 @@
 					});
 				}));
 			}
+	
+			//handle which array to use (sort by) and show/hide the sort arrow icon
+	
 		}, {
 			key: 'processClick',
 			value: function processClick(clickedItem) {
@@ -20262,11 +20273,13 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Table = function Table(props) {
+	    //mapping all the users into an array
 	    var camperList = props.usersToRender.map(function (users) {
 	        return _react2.default.createElement(_camper2.default, { key: users.rank, rank: users.rank, username: users.username,
 	            recentPoints: users.recpoints, alltimePoints: users.alltimepoints, img: users.img });
 	    });
 	
+	    //click handler for when they click the sorter below
 	    return _react2.default.createElement(
 	        'div',
 	        { className: 'animated fadeIn table-responsive' },
@@ -22072,7 +22085,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  background-image: url(\"https://static.pexels.com/photos/20974/pexels-photo.jpg\");\n  background-attachment: fixed;\n  background-repeat: no-repeat; }\n\nh1 {\n  font-size: 4em;\n  font-weight: bolder;\n  margin-top: 50px;\n  text-align: center;\n  background: -webkit-linear-gradient(#F2B407, #8A310E);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent; }\n\nh3 {\n  text-align: center; }\n\n#wrapper {\n  width: 80%;\n  margin: 100px auto 0px auto;\n  box-shadow: 0px 0px 20px 2px black; }\n\n.table-striped {\n  font-size: 1.5em;\n  font-weight: bold; }\n  .table-striped thead {\n    background-color: #207D38;\n    color: white; }\n  .table-striped tbody tr:nth-of-type(odd) {\n    background-color: #A4E0B3; }\n  .table-striped tbody tr:nth-of-type(even) {\n    background-color: #207D38;\n    color: white; }\n\n.sorter {\n  cursor: pointer;\n  transition: all .3s;\n  -webkit-animation-delay: 3s;\n  -webkit-animation-duration: 2s;\n  -webkit-animation-iteration-count: 2; }\n\n.sorter:hover {\n  color: black; }\n\n#recent:active {\n  color: red; }\n\np {\n  display: inline-block;\n  margin-bottom: 0px; }\n\n.seen {\n  display: inline; }\n\n.unseen {\n  display: none; }\n", ""]);
+	exports.push([module.id, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  background: #f2f6f8;\n  background: -moz-linear-gradient(top, #f2f6f8 0%, #d8e1e7 28%, #b5c6d0 63%, #e0eff9 100%);\n  background: -webkit-linear-gradient(top, #f2f6f8 0%, #d8e1e7 28%, #b5c6d0 63%, #e0eff9 100%);\n  background: linear-gradient(to bottom, #f2f6f8 0%, #d8e1e7 28%, #b5c6d0 63%, #e0eff9 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); }\n\nh1 {\n  font-size: 4em;\n  font-weight: bolder;\n  margin-top: 50px;\n  text-align: center;\n  background: -webkit-linear-gradient(#06247A, #085463);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent; }\n\nh3 {\n  text-align: center; }\n\n#wrapper {\n  width: 80%;\n  margin: 100px auto 0px auto;\n  box-shadow: 0px 0px 20px 2px black; }\n\n.table-striped {\n  font-size: 1.5em;\n  font-weight: bold; }\n  .table-striped thead {\n    background-color: #263782;\n    color: white; }\n  .table-striped tbody tr:nth-of-type(odd) {\n    background-color: #DED599; }\n  .table-striped tbody tr:nth-of-type(even) {\n    background-color: #263782;\n    color: white; }\n\n.sorter {\n  cursor: pointer;\n  transition: all .2s;\n  -webkit-animation-delay: 3s;\n  -webkit-animation-duration: 2s;\n  -webkit-animation-iteration-count: 2; }\n\n.sorter:hover {\n  text-shadow: 1px 1px black,\r 2px 2px black,\r 3px 3px black;\n  -webkit-transform: translateX(-3px);\n  transform: translateX(-3px);\n  color: #DED599; }\n\np {\n  display: inline-block;\n  margin-bottom: 0px; }\n\n.seen {\n  display: inline; }\n\n.unseen {\n  display: none; }\n", ""]);
 	
 	// exports
 

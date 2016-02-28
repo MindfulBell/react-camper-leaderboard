@@ -1,18 +1,21 @@
-$light: #A4E0B3;
-$dark: #207D38;
+$light: #DED599;
+$dark: #263782;
 
 body {
-	font-family: 'Josefin Sans', sans-serif;
-	background-image: url('https://static.pexels.com/photos/20974/pexels-photo.jpg'); //not my photo
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+	font-family: 'Josefin Sans', sans-serif;	
+	background: rgb(242,246,248);
+	background: -moz-linear-gradient(top,  rgba(242,246,248,1) 0%, rgba(216,225,231,1) 28%, rgba(181,198,208,1) 63%, rgba(224,239,249,1) 100%); 
+	background: -webkit-linear-gradient(top,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 28%,rgba(181,198,208,1) 63%,rgba(224,239,249,1) 100%); 
+	background: linear-gradient(to bottom,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 28%,rgba(181,198,208,1) 63%,rgba(224,239,249,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 );
 }
+
 h1 {
 	font-size: 4em;
 	font-weight: bolder;
 	margin-top: 50px;
 	text-align: center;
-	background: -webkit-linear-gradient(#F2B407, #8A310E);
+	background: -webkit-linear-gradient(#06247A, #085463);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -48,18 +51,19 @@ h3 {
 
 .sorter {
 	cursor: pointer;
-	transition: all .3s;
+	transition: all .2s;
 	-webkit-animation-delay: 3s;
 	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: 2;
 }
 
 .sorter:hover {
-	color: black;
-}
-
-#recent:active {
-	color: red;
+	text-shadow:1px 1px black,
+                2px 2px black,
+                3px 3px black;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+    color: $light;
 }
 
 p {

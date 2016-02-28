@@ -6,6 +6,10 @@ import axios from 'axios';
 import Loader from 'react-loader';
 
 class App extends React.Component {
+	//init state holding the top campers over 30 days in recent Arr
+	//holding top campers all time in alltimeArr
+	//arrToUse used to control users clicking the columns to sort properly
+	//seen/unseen to show/hide the sort arrow
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -18,7 +22,8 @@ class App extends React.Component {
 		}
 	}
 
-	componentWillMount() {
+	//ajax request for the leaders
+	componentDidMount() {
 		axios.all([
 		axios.get('http://fcctop100.herokuapp.com/api/fccusers/top/recent'),
 		axios.get('http://fcctop100.herokuapp.com/api/fccusers/top/alltime')
@@ -39,6 +44,7 @@ class App extends React.Component {
 		}));
 	}
 
+	//handle which array to use (sort by) and show/hide the sort arrow icon
 	processClick(clickedItem) {
 			this.setState({arrToUse: clickedItem})
 			if (clickedItem === this.state.recentArr) {
