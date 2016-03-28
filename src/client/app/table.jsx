@@ -9,8 +9,8 @@ const Table = (props) => {
         return (
             <Camper key={users.rank} rank={users.rank} username={users.username}
             recentPoints={users.recpoints} alltimePoints={users.alltimepoints} img={users.img} />
-            )
-    })
+            );
+    });
 
     //click handler for when they click the sorter below
     return (

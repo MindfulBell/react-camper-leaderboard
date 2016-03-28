@@ -59,17 +59,16 @@ class App extends React.Component {
 					alltimeClass: 'seen'
 				})
 			}
-
 		}
 
 	render () {
 		return (	
-		<div class='container-fluid' id='wrapper'>
+		<div className='container-fluid' id='wrapper'>
 		<Loader loaded={this.state.loaded} color={'#207D38'}>			
 				<Table usersToRender={this.state.arrToUse}
 				recentIcon={this.state.recentClass}
 				alltimeIcon={this.state.alltimeClass} 
-				tableClick={this.processClick.bind(this)} //why did i have to bind?! Need to learn this
+				tableClick={this.processClick.bind(this)}
 				recentArr={this.state.recentArr} 
 				alltimeArr={this.state.alltimeArr} />	
 		</Loader>		
