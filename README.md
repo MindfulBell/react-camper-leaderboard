@@ -1,7 +1,7 @@
-Camper leaderboard for the FreeCodeCamp website using React, Sass, axios, and a little bit of jQuery. 
+##Camper leaderboard
 
-Retrievews a list of the top campers on FCC based on how many 'brownie points' they have. 
+###Built for the FreeCodeCamp website using React, Sass, axios, and a little bit of jQuery. 
 
-Allows the user to sort by past 30 days vs. all time
+####Retrieves a list of the top campers on FCC based on how many 'brownie points' they have. Allows the user to sort by past 30 days vs. all time
 
-3rd app built in React.
+####Check it out [here](https://htmlpreview.github.io/?https://github.com/MindfulBell/react-camper-leaderboard/blob/master/src/client/index.html)
