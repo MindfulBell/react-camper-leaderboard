@@ -25,8 +25,8 @@ class App extends React.Component {
 	//ajax request for the leaders
 	componentDidMount() {
 		axios.all([
-		axios.get('http://fcctop100.herokuapp.com/api/fccusers/top/recent'),
-		axios.get('http://fcctop100.herokuapp.com/api/fccusers/top/alltime')
+		axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent'),
+		axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
 		]).then(axios.spread( (recentResponse, alltimeResponse) => {
 			const myRecentArr = recentResponse.data.map((user,ind) => {
 				return {username: user.username, rank: ind+1, img: user.img, recpoints: user.recent, alltimepoints: user.alltime}
